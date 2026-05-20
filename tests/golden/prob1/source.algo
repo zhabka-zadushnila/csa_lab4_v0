@@ -1,0 +1,18 @@
+fn main() -> i32 {
+    i32 sum;
+    i32 i;
+
+    sum = 0;
+    i = 1;
+
+    while (i < 1000) {
+        if ((i % 3) == 0) {
+            sum = sum + i;
+        } else if ((i % 5) == 0) {
+            sum = sum + i;
+        }
+        i = i + 1;
+    }
+
+    cout << sum;
+}

@@ -1,0 +1,39 @@
+fn main() -> i32 {
+    ptr a[10];
+    i32 n;
+    i32 i;
+    i32 j;
+    i32 tmp;
+    i32 ai;
+    i32 aj;
+
+    n = 6;
+    a[0] = 42;
+    a[1] = 17;
+    a[2] = 5;
+    a[3] = 99;
+    a[4] = 3;
+    a[5] = 8;
+
+    i = 0;
+    while (i < n) {
+        j = i + 1;
+        while (j < n) {
+            ai = a[i];
+            aj = a[j];
+            if (aj < ai) {
+                tmp = a[i];
+                a[i] = a[j];
+                a[j] = tmp;
+            }
+            j = j + 1;
+        }
+        i = i + 1;
+    }
+
+    i = 0;
+    while (i < n) {
+        cout << a[i];
+        i = i + 1;
+    }
+}

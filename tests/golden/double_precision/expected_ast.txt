@@ -1,0 +1,57 @@
+.
+└── Block
+    └── Fn: main (Args: []) -> Some("i32")
+        └── Block
+            ├── VarDecl: i32 a_lo
+            ├── VarDecl: i32 a_hi
+            ├── VarDecl: i32 b_lo
+            ├── VarDecl: i32 b_hi
+            ├── VarDecl: i32 sum_lo
+            ├── VarDecl: i32 sum_hi
+            ├── Op: Assign
+            │   ├── Atom: Variable("a_lo")
+            │   └── Atom: Integer(1000000)
+            ├── Op: Assign
+            │   ├── Atom: Variable("a_hi")
+            │   └── Atom: Integer(2)
+            ├── Op: Assign
+            │   ├── Atom: Variable("b_lo")
+            │   └── Atom: Integer(500000)
+            ├── Op: Assign
+            │   ├── Atom: Variable("b_hi")
+            │   └── Atom: Integer(3)
+            ├── Op: Assign
+            │   ├── Atom: Variable("sum_lo")
+            │   └── Op: Add
+            │       ├── Atom: Variable("a_lo")
+            │       └── Atom: Variable("b_lo")
+            ├── If
+            │   ├── Op: Less
+            │   │   ├── Atom: Variable("sum_lo")
+            │   │   └── Atom: Variable("a_lo")
+            │   ├── Block
+            │   │   └── Op: Assign
+            │   │       ├── Atom: Variable("sum_hi")
+            │   │       └── Op: Add
+            │   │           ├── Op: Add
+            │   │           │   ├── Atom: Variable("a_hi")
+            │   │           │   └── Atom: Variable("b_hi")
+            │   │           └── Atom: Integer(1)
+            │   └── Block
+            │       └── Op: Assign
+            │           ├── Atom: Variable("sum_hi")
+            │           └── Op: Add
+            │               ├── Atom: Variable("a_hi")
+            │               └── Atom: Variable("b_hi")
+            ├── Cout
+            │   └── Atom: Variable("a_hi")
+            ├── Cout
+            │   └── Atom: Variable("a_lo")
+            ├── Cout
+            │   └── Atom: Variable("b_hi")
+            ├── Cout
+            │   └── Atom: Variable("b_lo")
+            ├── Cout
+            │   └── Atom: Variable("sum_hi")
+            └── Cout
+                └── Atom: Variable("sum_lo")

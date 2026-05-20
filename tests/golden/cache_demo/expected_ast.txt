@@ -1,0 +1,52 @@
+.
+└── Block
+    └── Fn: main (Args: []) -> Some("i32")
+        └── Block
+            ├── VarDecl: ptr arr
+                Size:
+            │   └── Atom: Integer(512)
+            ├── For
+            │   ├── VarDecl: i32 i
+            │       Init:
+            │   │   └── Atom: Integer(0)
+            │   ├── Op: Less
+            │   │   ├── Atom: Variable("i")
+            │   │   └── Atom: Integer(512)
+            │   ├── Op: Assign
+            │   │   ├── Atom: Variable("i")
+            │   │   └── Op: Add
+            │   │       ├── Atom: Variable("i")
+            │   │       └── Atom: Integer(1)
+            │   └── Block
+            │       └── Op: Assign
+            │           ├── Index Access
+            │           │   ├── Atom: Variable("arr")
+            │           │   └── Atom: Variable("i")
+            │           └── Atom: Variable("i")
+            ├── VarDecl: i32 sum
+                Init:
+            │   └── Atom: Integer(0)
+            ├── VarDecl: i32 i
+                Init:
+            │   └── Atom: Integer(0)
+            ├── While
+            │   ├── Op: Less
+            │   │   ├── Atom: Variable("i")
+            │   │   └── Atom: Integer(512)
+            │   └── Block
+            │       ├── Op: Assign
+            │       │   ├── Atom: Variable("sum")
+            │       │   └── Op: Add
+            │       │       ├── Atom: Variable("sum")
+            │       │       └── Index Access
+            │       │           ├── Atom: Variable("arr")
+            │       │           └── Atom: Variable("i")
+            │       └── Op: Assign
+            │           ├── Atom: Variable("i")
+            │           └── Op: Add
+            │               ├── Atom: Variable("i")
+            │               └── Atom: Integer(1)
+            ├── Cout
+            │   └── Atom: Variable("sum")
+            └── Return
+                └── Atom: Integer(0)

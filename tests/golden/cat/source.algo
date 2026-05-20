@@ -1,0 +1,8 @@
+fn main() -> i32 {
+    i32 x;
+    cin >> x;
+    while (x != 0) {
+        cout << x;
+        cin >> x;
+    }
+}

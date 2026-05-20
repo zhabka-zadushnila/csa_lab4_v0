@@ -1,0 +1,16 @@
+.
+└── Block
+    └── Fn: main (Args: []) -> Some("i32")
+        └── Block
+            ├── VarDecl: i32 x
+            ├── Cin
+            │   └── Atom: Variable("x")
+            └── While
+                ├── Op: NotEq
+                │   ├── Atom: Variable("x")
+                │   └── Atom: Integer(0)
+                └── Block
+                    ├── Cout
+                    │   └── Atom: Variable("x")
+                    └── Cin
+                        └── Atom: Variable("x")

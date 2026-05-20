@@ -1,0 +1,24 @@
+name: Rust CI
+on: [push, pull_request]
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+      - name: Format
+        run: |
+          cd compiler && cargo fmt -- --check
+          cd ../psim && cargo fmt -- --check
+      - name: Clippy
+        run: |
+          cd compiler && cargo clippy -- -D warnings
+          cd ../psim && cargo clippy -- -D warnings
+      - name: Build Compiler
+        run: cd compiler && cargo build --release
+      - name: Build Simulator
+        run: cd psim && cargo build --release
+      - name: Run Golden Tests
+        run: ./tests/golden/test_runner.sh

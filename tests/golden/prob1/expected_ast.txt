@@ -1,0 +1,48 @@
+.
+└── Block
+    └── Fn: main (Args: []) -> Some("i32")
+        └── Block
+            ├── VarDecl: i32 sum
+            ├── VarDecl: i32 i
+            ├── Op: Assign
+            │   ├── Atom: Variable("sum")
+            │   └── Atom: Integer(0)
+            ├── Op: Assign
+            │   ├── Atom: Variable("i")
+            │   └── Atom: Integer(1)
+            ├── While
+            │   ├── Op: Less
+            │   │   ├── Atom: Variable("i")
+            │   │   └── Atom: Integer(1000)
+            │   └── Block
+            │       ├── If
+            │       │   ├── Op: Eq
+            │       │   │   ├── Op: Rem
+            │       │   │   │   ├── Atom: Variable("i")
+            │       │   │   │   └── Atom: Integer(3)
+            │       │   │   └── Atom: Integer(0)
+            │       │   ├── Block
+            │       │   │   └── Op: Assign
+            │       │   │       ├── Atom: Variable("sum")
+            │       │   │       └── Op: Add
+            │       │   │           ├── Atom: Variable("sum")
+            │       │   │           └── Atom: Variable("i")
+            │       │   └── If
+            │       │       ├── Op: Eq
+            │       │       │   ├── Op: Rem
+            │       │       │   │   ├── Atom: Variable("i")
+            │       │       │   │   └── Atom: Integer(5)
+            │       │       │   └── Atom: Integer(0)
+            │       │       └── Block
+            │       │           └── Op: Assign
+            │       │               ├── Atom: Variable("sum")
+            │       │               └── Op: Add
+            │       │                   ├── Atom: Variable("sum")
+            │       │                   └── Atom: Variable("i")
+            │       └── Op: Assign
+            │           ├── Atom: Variable("i")
+            │           └── Op: Add
+            │               ├── Atom: Variable("i")
+            │               └── Atom: Integer(1)
+            └── Cout
+                └── Atom: Variable("sum")

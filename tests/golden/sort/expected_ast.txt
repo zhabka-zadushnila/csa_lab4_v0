@@ -1,0 +1,123 @@
+.
+└── Block
+    └── Fn: main (Args: []) -> Some("i32")
+        └── Block
+            ├── VarDecl: ptr a
+                Size:
+            │   └── Atom: Integer(10)
+            ├── VarDecl: i32 n
+            ├── VarDecl: i32 i
+            ├── VarDecl: i32 j
+            ├── VarDecl: i32 tmp
+            ├── VarDecl: i32 ai
+            ├── VarDecl: i32 aj
+            ├── Op: Assign
+            │   ├── Atom: Variable("n")
+            │   └── Atom: Integer(6)
+            ├── Op: Assign
+            │   ├── Index Access
+            │   │   ├── Atom: Variable("a")
+            │   │   └── Atom: Integer(0)
+            │   └── Atom: Integer(42)
+            ├── Op: Assign
+            │   ├── Index Access
+            │   │   ├── Atom: Variable("a")
+            │   │   └── Atom: Integer(1)
+            │   └── Atom: Integer(17)
+            ├── Op: Assign
+            │   ├── Index Access
+            │   │   ├── Atom: Variable("a")
+            │   │   └── Atom: Integer(2)
+            │   └── Atom: Integer(5)
+            ├── Op: Assign
+            │   ├── Index Access
+            │   │   ├── Atom: Variable("a")
+            │   │   └── Atom: Integer(3)
+            │   └── Atom: Integer(99)
+            ├── Op: Assign
+            │   ├── Index Access
+            │   │   ├── Atom: Variable("a")
+            │   │   └── Atom: Integer(4)
+            │   └── Atom: Integer(3)
+            ├── Op: Assign
+            │   ├── Index Access
+            │   │   ├── Atom: Variable("a")
+            │   │   └── Atom: Integer(5)
+            │   └── Atom: Integer(8)
+            ├── Op: Assign
+            │   ├── Atom: Variable("i")
+            │   └── Atom: Integer(0)
+            ├── While
+            │   ├── Op: Less
+            │   │   ├── Atom: Variable("i")
+            │   │   └── Atom: Variable("n")
+            │   └── Block
+            │       ├── Op: Assign
+            │       │   ├── Atom: Variable("j")
+            │       │   └── Op: Add
+            │       │       ├── Atom: Variable("i")
+            │       │       └── Atom: Integer(1)
+            │       ├── While
+            │       │   ├── Op: Less
+            │       │   │   ├── Atom: Variable("j")
+            │       │   │   └── Atom: Variable("n")
+            │       │   └── Block
+            │       │       ├── Op: Assign
+            │       │       │   ├── Atom: Variable("ai")
+            │       │       │   └── Index Access
+            │       │       │       ├── Atom: Variable("a")
+            │       │       │       └── Atom: Variable("i")
+            │       │       ├── Op: Assign
+            │       │       │   ├── Atom: Variable("aj")
+            │       │       │   └── Index Access
+            │       │       │       ├── Atom: Variable("a")
+            │       │       │       └── Atom: Variable("j")
+            │       │       ├── If
+            │       │       │   ├── Op: Less
+            │       │       │   │   ├── Atom: Variable("aj")
+            │       │       │   │   └── Atom: Variable("ai")
+            │       │       │   └── Block
+            │       │       │       ├── Op: Assign
+            │       │       │       │   ├── Atom: Variable("tmp")
+            │       │       │       │   └── Index Access
+            │       │       │       │       ├── Atom: Variable("a")
+            │       │       │       │       └── Atom: Variable("i")
+            │       │       │       ├── Op: Assign
+            │       │       │       │   ├── Index Access
+            │       │       │       │   │   ├── Atom: Variable("a")
+            │       │       │       │   │   └── Atom: Variable("i")
+            │       │       │       │   └── Index Access
+            │       │       │       │       ├── Atom: Variable("a")
+            │       │       │       │       └── Atom: Variable("j")
+            │       │       │       └── Op: Assign
+            │       │       │           ├── Index Access
+            │       │       │           │   ├── Atom: Variable("a")
+            │       │       │           │   └── Atom: Variable("j")
+            │       │       │           └── Atom: Variable("tmp")
+            │       │       └── Op: Assign
+            │       │           ├── Atom: Variable("j")
+            │       │           └── Op: Add
+            │       │               ├── Atom: Variable("j")
+            │       │               └── Atom: Integer(1)
+            │       └── Op: Assign
+            │           ├── Atom: Variable("i")
+            │           └── Op: Add
+            │               ├── Atom: Variable("i")
+            │               └── Atom: Integer(1)
+            ├── Op: Assign
+            │   ├── Atom: Variable("i")
+            │   └── Atom: Integer(0)
+            └── While
+                ├── Op: Less
+                │   ├── Atom: Variable("i")
+                │   └── Atom: Variable("n")
+                └── Block
+                    ├── Cout
+                    │   └── Index Access
+                    │       ├── Atom: Variable("a")
+                    │       └── Atom: Variable("i")
+                    └── Op: Assign
+                        ├── Atom: Variable("i")
+                        └── Op: Add
+                            ├── Atom: Variable("i")
+                            └── Atom: Integer(1)

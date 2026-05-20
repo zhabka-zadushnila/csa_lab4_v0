@@ -1,0 +1,41 @@
+fn print_str(ptr s) -> i32 {
+    i32 i = 0;
+    while (s[i] != 0) {
+        cout << s[i];
+        i++;
+    }
+    return 0;
+}
+
+fn main() -> i32 {
+    i32 name[100];
+
+    print_str("What is your name? ");
+
+    i32 i = 0;
+    i32 ch = 0;
+
+    i32 reading = true;
+
+    while (reading) {
+        cin >> ch;
+
+        if (ch == '\n') {
+            reading = false;
+        } else {
+            name[i] = ch;
+            i++;
+        }
+    }
+
+
+    name[i] = 0;
+
+    print_str("Hello, ");
+
+    print_str(name);
+
+    cout << '\n';
+
+    return 0;
+}

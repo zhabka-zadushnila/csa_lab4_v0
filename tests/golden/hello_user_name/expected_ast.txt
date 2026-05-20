@@ -1,0 +1,75 @@
+.
+└── Block
+    ├── Fn: print_str (Args: [("ptr", "s")]) -> Some("i32")
+    │   └── Block
+    │       ├── VarDecl: i32 i
+    │           Init:
+    │       │   └── Atom: Integer(0)
+    │       ├── While
+    │       │   ├── Op: NotEq
+    │       │   │   ├── Index Access
+    │       │   │   │   ├── Atom: Variable("s")
+    │       │   │   │   └── Atom: Variable("i")
+    │       │   │   └── Atom: Integer(0)
+    │       │   └── Block
+    │       │       ├── Cout
+    │       │       │   └── Index Access
+    │       │       │       ├── Atom: Variable("s")
+    │       │       │       └── Atom: Variable("i")
+    │       │       └── Op: Inc
+    │       │           └── Atom: Variable("i")
+    │       └── Return
+    │           └── Atom: Integer(0)
+    └── Fn: main (Args: []) -> Some("i32")
+        └── Block
+            ├── VarDecl: i32 name
+                Size:
+            │   └── Atom: Integer(100)
+            ├── Call
+            │   ├── Atom: Variable("print_str")
+            │   └── Atom: String("What is your name? ")
+            ├── VarDecl: i32 i
+                Init:
+            │   └── Atom: Integer(0)
+            ├── VarDecl: i32 ch
+                Init:
+            │   └── Atom: Integer(0)
+            ├── VarDecl: i32 reading
+                Init:
+            │   └── Atom: Boolean(true)
+            ├── While
+            │   ├── Atom: Variable("reading")
+            │   └── Block
+            │       ├── Cin
+            │       │   └── Atom: Variable("ch")
+            │       └── If
+            │           ├── Op: Eq
+            │           │   ├── Atom: Variable("ch")
+            │           │   └── Atom: Char('\n')
+            │           ├── Block
+            │           │   └── Op: Assign
+            │           │       ├── Atom: Variable("reading")
+            │           │       └── Atom: Boolean(false)
+            │           └── Block
+            │               ├── Op: Assign
+            │               │   ├── Index Access
+            │               │   │   ├── Atom: Variable("name")
+            │               │   │   └── Atom: Variable("i")
+            │               │   └── Atom: Variable("ch")
+            │               └── Op: Inc
+            │                   └── Atom: Variable("i")
+            ├── Op: Assign
+            │   ├── Index Access
+            │   │   ├── Atom: Variable("name")
+            │   │   └── Atom: Variable("i")
+            │   └── Atom: Integer(0)
+            ├── Call
+            │   ├── Atom: Variable("print_str")
+            │   └── Atom: String("Hello, ")
+            ├── Call
+            │   ├── Atom: Variable("print_str")
+            │   └── Atom: Variable("name")
+            ├── Cout
+            │   └── Atom: Char('\n')
+            └── Return
+                └── Atom: Integer(0)

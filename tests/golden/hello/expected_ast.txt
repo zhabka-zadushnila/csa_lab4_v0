@@ -1,0 +1,35 @@
+.
+└── Block
+    ├── Fn: print_str (Args: [("ptr", "s")]) -> Some("i32")
+    │   └── Block
+    │       ├── VarDecl: i32 i
+    │           Init:
+    │       │   └── Atom: Integer(0)
+    │       ├── While
+    │       │   ├── Op: NotEq
+    │       │   │   ├── Index Access
+    │       │   │   │   ├── Atom: Variable("s")
+    │       │   │   │   └── Atom: Variable("i")
+    │       │   │   └── Atom: Integer(0)
+    │       │   └── Block
+    │       │       ├── Cout
+    │       │       │   └── Index Access
+    │       │       │       ├── Atom: Variable("s")
+    │       │       │       └── Atom: Variable("i")
+    │       │       └── Op: Assign
+    │       │           ├── Atom: Variable("i")
+    │       │           └── Op: Add
+    │       │               ├── Atom: Variable("i")
+    │       │               └── Atom: Integer(1)
+    │       └── Return
+    │           └── Atom: Integer(0)
+    └── Fn: main (Args: []) -> Some("i32")
+        └── Block
+            ├── VarDecl: ptr msg
+                Init:
+            │   └── Atom: String("Hello, World!")
+            ├── Call
+            │   ├── Atom: Variable("print_str")
+            │   └── Atom: Variable("msg")
+            └── Return
+                └── Atom: Integer(0)

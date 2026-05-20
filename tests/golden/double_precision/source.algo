@@ -1,0 +1,28 @@
+fn main() -> i32 {
+    i32 a_lo;
+    i32 a_hi;
+    i32 b_lo;
+    i32 b_hi;
+    i32 sum_lo;
+    i32 sum_hi;
+
+    a_lo = 1000000;
+    a_hi = 2;
+    b_lo = 500000;
+    b_hi = 3;
+
+    sum_lo = a_lo + b_lo;
+
+    if (sum_lo < a_lo) {
+        sum_hi = a_hi + b_hi + 1;
+    } else {
+        sum_hi = a_hi + b_hi;
+    }
+
+    cout << a_hi;
+    cout << a_lo;
+    cout << b_hi;
+    cout << b_lo;
+    cout << sum_hi;
+    cout << sum_lo;
+}
