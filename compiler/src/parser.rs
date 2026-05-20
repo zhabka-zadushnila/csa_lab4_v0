@@ -491,15 +491,11 @@ pub fn optimize_tree(expr: Expression) -> Expression {
                     Ops::Add => return Expression::Atom(Value::Integer(l + r)),
                     Ops::Sub => return Expression::Atom(Value::Integer(l - r)),
                     Ops::Mul => return Expression::Atom(Value::Integer(l * r)),
-                    Ops::Div => {
-                        if *r != 0 {
-                            return Expression::Atom(Value::Integer(l / r));
-                        }
+                    Ops::Div if *r != 0 => {
+                        return Expression::Atom(Value::Integer(l / r));
                     }
-                    Ops::Rem => {
-                        if *r != 0 {
-                            return Expression::Atom(Value::Integer(l % r));
-                        }
+                    Ops::Rem if *r != 0 => {
+                        return Expression::Atom(Value::Integer(l % r));
                     }
                     _ => {}
                 }
