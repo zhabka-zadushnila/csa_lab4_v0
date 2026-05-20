@@ -465,7 +465,7 @@ impl Parser {
             TokenKind::OpLessOrEq => Ops::LessEq,
             TokenKind::OpGreaterThan => Ops::Greater,
             TokenKind::OpGreaterOrEq => Ops::GreaterEq,
-            TokenKind::OpShiftLeft => Ops::Add,  // unused, only for cout/cin
+            TokenKind::OpShiftLeft => Ops::Add, // unused, only for cout/cin
             TokenKind::OpShiftRight => Ops::Add, // unused, only for cout/cin
             TokenKind::OpAnd => Ops::And,
             TokenKind::OpOr => Ops::Or,

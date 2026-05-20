@@ -298,7 +298,8 @@ impl CPU {
         let bus_value = self.drive_bus(micro.bus_out);
 
         let (write_value, flag_z, flag_n, flag_c, flag_v) = if micro.alu != ALU_PASS {
-            let result = Self::alu_execute(micro.alu, self.registers.AC, bus_value, self.registers.PS.c);
+            let result =
+                Self::alu_execute(micro.alu, self.registers.AC, bus_value, self.registers.PS.c);
             self.alu_latch = Some(AluResult {
                 value: result.value,
                 z: result.z,
